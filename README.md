@@ -5,7 +5,7 @@ English | [简体中文](README.zh-CN.md)
 ![AIX Skills Overview](docs/assets/aix-skills-overview.svg)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-5-7c3aed)
+![Skills](https://img.shields.io/badge/skills-16-7c3aed)
 ![Validation](https://img.shields.io/badge/validation-docker%20ready-16a34a)
 ![Agent Skills](https://img.shields.io/badge/agent--skills-public-0f766e)
 
@@ -43,9 +43,20 @@ A good skill should have:
 
 | Skill | Purpose |
 | --- | --- |
+| `8051-mcu-debug` | Helps agents debug 8051-compatible MCU firmware, downloads, clocks, interrupts, and peripherals. |
+| `bootloader-debug` | Helps agents debug bootloaders, app jumps, firmware upgrade state, and rollback paths. |
 | `cortex-m-debug` | Helps agents debug Cortex-M firmware, faults, startup code, and SWD/JTAG sessions. |
+| `embedded-debug-entry` | Routes embedded debugging requests to the right architecture or workflow skill. |
+| `embedded-fault-debug` | Helps agents preserve and analyze crash, trap, fault, stack, and reset evidence. |
 | `embedded-linux-login-debug` | Helps agents choose a safe login method before debugging embedded Linux devices. |
+| `embedded-peripheral-bringup` | Helps agents bring up GPIO, UART, SPI, I2C, PWM, ADC, timers, DMA, and interrupts. |
+| `embedded-serial-log-debug` | Helps agents collect and trust serial UART logs, boot consoles, and missing-output evidence. |
+| `hardware-interface-debug` | Helps agents debug board-level power, reset, clock, pin, and signal issues. |
+| `low-power-debug` | Helps agents debug sleep, wakeup, current consumption, and low-power mode failures. |
+| `mcu-flashing-debug` | Helps agents debug MCU flashing, erase, program, verify, and probe connection failures. |
 | `readme-writing` | Helps agents create attractive, trustworthy, quickstart-friendly README files. |
+| `riscv-mcu-debug` | Helps agents debug RISC-V MCU firmware, traps, CSRs, startup code, and OpenOCD/GDB sessions. |
+| `rtos-debug` | Helps agents debug embedded RTOS tasks, stacks, priorities, queues, mutexes, and interrupts. |
 | `skill-writing-guide` | Teaches agents how to write concise, discoverable, testable skills for this repository. |
 | `webpage-to-markdown` | Converts a public webpage URL into clean Markdown content. |
 
