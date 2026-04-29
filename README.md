@@ -5,7 +5,7 @@ English | [简体中文](README.zh-CN.md)
 ![AIX Skills Overview](docs/assets/aix-skills-overview.svg)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-4-7c3aed)
+![Skills](https://img.shields.io/badge/skills-5-7c3aed)
 ![Validation](https://img.shields.io/badge/validation-docker%20ready-16a34a)
 ![Agent Skills](https://img.shields.io/badge/agent--skills-public-0f766e)
 
@@ -43,6 +43,7 @@ A good skill should have:
 
 | Skill | Purpose |
 | --- | --- |
+| `cortex-m-debug` | Helps agents debug Cortex-M firmware, faults, startup code, and SWD/JTAG sessions. |
 | `embedded-linux-login-debug` | Helps agents choose a safe login method before debugging embedded Linux devices. |
 | `readme-writing` | Helps agents create attractive, trustworthy, quickstart-friendly README files. |
 | `skill-writing-guide` | Teaches agents how to write concise, discoverable, testable skills for this repository. |
