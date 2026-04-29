@@ -19,6 +19,12 @@ Run:
 python3 scripts/validate-skills.py
 ```
 
+Or run the same checks in Docker:
+
+```bash
+docker run --rm -v "$PWD:/workspace" -w /workspace python:3.12-slim bash -lc "python3 scripts/validate-skills.py && python3 -m unittest tests/test_validate_skills.py"
+```
+
 Expected result:
 
 ```text
@@ -37,6 +43,7 @@ The number may change as the repository grows.
 ## Publishing
 
 - Ensure the license is intentional.
+- Confirm `.github/workflows/validate.yml` passes on the default branch.
 - Push to GitHub.
 - Add repository topics such as `agent-skills`, `claude-skills`, `ai-workflows`, and `skills`.
 - Open a first issue listing planned future skills.
