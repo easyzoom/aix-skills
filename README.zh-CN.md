@@ -2,6 +2,8 @@
 
 [English](README.md) | 简体中文
 
+![AIX Skills Overview](docs/assets/aix-skills-overview.svg)
+
 AIX Skills 是一个公开的 Agent Skills 集合，提供可直接使用的 skills、创建 skills 的模板，以及精选外部资源目录。
 
 本仓库采用混合型结构：一部分是自研 skills，一部分是模板和规范，另一部分是 awesome 资源索引。目标是让读者既能拿来用，也能照着规范贡献新的 skill。
@@ -9,6 +11,8 @@ AIX Skills 是一个公开的 Agent Skills 集合，提供可直接使用的 ski
 ## 什么是 Agent Skill？
 
 Agent Skills 是面向特定任务的说明、脚本和参考资料，AI agent 可以在相关任务出现时动态加载。一个好的 skill 会告诉 agent 什么时候使用、如何执行，以及应该避免哪些错误。
+
+![Anatomy of an Agent Skill](docs/assets/skill-anatomy.svg)
 
 一个好的 skill 应该具备：
 
@@ -61,6 +65,8 @@ python3 scripts/validate-skills.py
 ```
 
 ## 设计原则
+
+![Repeatable AI Workflow](docs/assets/repeatable-workflow.svg)
 
 - **小核心，重参考外置**：`SKILL.md` 应该便于快速扫描，长参考资料放到 supporting files。
 - **描述字段先写触发条件**：frontmatter 的 `description` 说明何时使用，而不是复述完整流程。

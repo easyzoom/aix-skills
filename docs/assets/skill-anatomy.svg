@@ -1,0 +1,58 @@
+<svg width="1200" height="520" viewBox="0 0 1200 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Anatomy of an Agent Skill</title>
+  <desc id="desc">A hand-drawn style diagram showing that a skill contains trigger conditions, a repeatable workflow, references, and verification.</desc>
+  <rect width="1200" height="520" rx="34" fill="#fff7ed"/>
+  <path d="M70 92 C220 44 356 78 504 58 C692 34 840 74 1010 48 C1092 36 1146 52 1170 70" stroke="#fdba74" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+  <path d="M66 444 C248 482 382 430 540 454 C730 484 874 420 1038 448 C1102 458 1148 446 1172 430" stroke="#c4b5fd" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+
+  <g transform="translate(102 78)">
+    <rect x="0" y="0" width="436" height="344" rx="28" fill="#ffffff" stroke="#292524" stroke-width="4"/>
+    <path d="M30 76 C124 92 220 52 316 70 C364 80 394 70 412 62" stroke="#fed7aa" stroke-width="18" stroke-linecap="round"/>
+    <text x="34" y="60" fill="#292524" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="34" font-weight="800">SKILL.md</text>
+    <text x="34" y="110" fill="#57534e" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="20">Small entry point, clear instructions.</text>
+
+    <g transform="translate(42 154)">
+      <path d="M0 0 H332 C344 0 354 10 354 22 V66 C354 80 342 90 328 88 L4 88 C-8 84 -12 72 -10 58 L-6 16 C-4 6 -2 0 0 0Z" fill="#fef3c7" stroke="#92400e" stroke-width="3"/>
+      <text x="26" y="36" fill="#78350f" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="20" font-weight="700">Use when...</text>
+      <text x="26" y="64" fill="#78350f" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="16">Trigger conditions</text>
+    </g>
+
+    <g transform="translate(42 264)">
+      <path d="M0 0 C80 14 150 -12 226 4 C270 14 320 0 354 8 V86 C278 74 218 96 146 82 C82 70 34 88 -8 78 Z" fill="#dcfce7" stroke="#166534" stroke-width="3"/>
+      <text x="26" y="38" fill="#14532d" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="20" font-weight="700">Workflow</text>
+      <text x="26" y="66" fill="#14532d" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="16">Steps an agent can repeat</text>
+    </g>
+  </g>
+
+  <g transform="translate(624 88)">
+    <text x="0" y="32" fill="#292524" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="30" font-weight="800">A useful skill tells the agent:</text>
+
+    <g transform="translate(6 72)">
+      <circle cx="28" cy="28" r="24" fill="#ede9fe" stroke="#6d28d9" stroke-width="3"/>
+      <text x="21" y="37" fill="#6d28d9" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="25" font-weight="800">1</text>
+      <path d="M72 14 C220 -4 344 6 438 12 C456 14 462 48 444 58 C340 80 204 58 76 68 C58 68 52 24 72 14Z" fill="#ffffff" stroke="#44403c" stroke-width="3"/>
+      <text x="98" y="47" fill="#292524" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="20" font-weight="700">When should I load?</text>
+    </g>
+
+    <g transform="translate(6 152)">
+      <circle cx="28" cy="28" r="24" fill="#ccfbf1" stroke="#0f766e" stroke-width="3"/>
+      <text x="20" y="37" fill="#0f766e" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="25" font-weight="800">2</text>
+      <path d="M72 12 C206 4 320 -8 446 12 C464 18 460 56 440 62 C316 76 188 58 78 68 C58 70 52 24 72 12Z" fill="#ffffff" stroke="#44403c" stroke-width="3"/>
+      <text x="98" y="47" fill="#292524" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="20" font-weight="700">What steps should I follow?</text>
+    </g>
+
+    <g transform="translate(6 232)">
+      <circle cx="28" cy="28" r="24" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+      <text x="20" y="37" fill="#2563eb" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="25" font-weight="800">3</text>
+      <path d="M72 14 C214 -2 344 8 446 10 C466 12 462 54 444 62 C336 78 188 58 78 68 C60 70 52 24 72 14Z" fill="#ffffff" stroke="#44403c" stroke-width="3"/>
+      <text x="98" y="47" fill="#292524" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="20" font-weight="700">Where is the heavy context?</text>
+    </g>
+
+    <g transform="translate(6 312)">
+      <circle cx="28" cy="28" r="24" fill="#fee2e2" stroke="#dc2626" stroke-width="3"/>
+      <text x="20" y="37" fill="#dc2626" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="25" font-weight="800">4</text>
+      <path d="M72 12 C206 4 322 -8 446 12 C464 18 460 56 440 62 C316 76 188 58 78 68 C58 70 52 24 72 12Z" fill="#ffffff" stroke="#44403c" stroke-width="3"/>
+      <text x="98" y="47" fill="#292524" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="20" font-weight="700">How do I verify the result?</text>
+    </g>
+  </g>
+</svg>

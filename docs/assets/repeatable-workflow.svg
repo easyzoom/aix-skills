@@ -1,0 +1,43 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Repeatable AI workflow</title>
+  <desc id="desc">A hand-drawn style workflow from user request to loading a skill, following the workflow, and verifying the result.</desc>
+  <rect width="1200" height="420" rx="34" fill="#f8fafc"/>
+  <path d="M58 62 C176 34 298 72 420 48 C586 16 730 66 890 42 C1010 24 1112 50 1142 70" stroke="#93c5fd" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+  <path d="M76 356 C242 388 372 336 540 360 C706 384 834 330 996 354 C1078 366 1138 354 1168 338" stroke="#f9a8d4" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+
+  <text x="74" y="94" fill="#0f172a" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="36" font-weight="800">Repeatable AI workflows</text>
+  <text x="76" y="128" fill="#475569" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="20">Skills turn useful agent behavior into something you can run again.</text>
+
+  <g transform="translate(82 184)">
+    <path d="M0 18 C56 2 134 0 198 14 C220 20 224 104 202 116 C142 136 58 126 10 118 C-12 114 -16 30 0 18Z" fill="#ffffff" stroke="#1e293b" stroke-width="4"/>
+    <text x="34" y="58" fill="#0f172a" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="22" font-weight="800">User</text>
+    <text x="34" y="86" fill="#475569" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="17">request</text>
+  </g>
+
+  <path d="M310 244 C348 220 386 220 422 244" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+  <path d="M412 224 L436 246 L408 264" stroke="#64748b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g transform="translate(452 184)">
+    <path d="M4 10 C72 24 132 -8 206 10 C228 16 224 106 204 118 C138 134 60 130 8 116 C-12 110 -14 28 4 10Z" fill="#fef3c7" stroke="#92400e" stroke-width="4"/>
+    <text x="36" y="58" fill="#78350f" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="22" font-weight="800">Load</text>
+    <text x="36" y="86" fill="#78350f" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="17">the skill</text>
+  </g>
+
+  <path d="M680 244 C718 220 756 220 792 244" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+  <path d="M782 224 L806 246 L778 264" stroke="#64748b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g transform="translate(822 184)">
+    <path d="M0 18 C56 2 134 0 198 14 C220 20 224 104 202 116 C142 136 58 126 10 118 C-12 114 -16 30 0 18Z" fill="#dcfce7" stroke="#166534" stroke-width="4"/>
+    <text x="34" y="58" fill="#14532d" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="22" font-weight="800">Follow</text>
+    <text x="34" y="86" fill="#14532d" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="17">workflow</text>
+  </g>
+
+  <path d="M930 326 C878 380 666 384 596 326" stroke="#a855f7" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 13"/>
+  <path d="M592 350 L574 314 L616 316" stroke="#a855f7" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g transform="translate(458 292)">
+    <path d="M0 16 C74 -2 154 2 226 14 C250 18 250 84 228 96 C154 112 78 108 8 96 C-10 92 -16 28 0 16Z" fill="#ede9fe" stroke="#6d28d9" stroke-width="4"/>
+    <text x="34" y="56" fill="#5b21b6" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="22" font-weight="800">Verify result</text>
+    <text x="34" y="80" fill="#6d28d9" font-family="Comic Sans MS, Bradley Hand, ui-sans-serif, system-ui" font-size="15">Then improve the skill</text>
+  </g>
+</svg>

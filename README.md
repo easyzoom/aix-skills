@@ -17,6 +17,8 @@ This repository uses a hybrid structure: first-party skills that can be used dir
 
 Agent Skills are task-specific instructions, scripts, and references that an AI agent can load only when they are relevant. A good skill teaches an agent when to use a workflow, how to execute it, and what mistakes to avoid.
 
+![Anatomy of an Agent Skill](docs/assets/skill-anatomy.svg)
+
 A good skill should have:
 
 - Clear trigger conditions: when the agent should load it.
@@ -68,6 +70,8 @@ python3 scripts/validate-skills.py
 ```
 
 ## Design Principles
+
+![Repeatable AI Workflow](docs/assets/repeatable-workflow.svg)
 
 - **Small core, rich references**: keep `SKILL.md` fast to scan; move long API references or scripts into supporting files.
 - **Trigger-first descriptions**: frontmatter descriptions should say when to use a skill, not summarize every step.
