@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Validate Skills In Docker",
+      "type": "shell",
+      "command": "docker run --rm -v \"${workspaceFolder}:/workspace\" -w /workspace python:3.12-slim bash -lc \"python3 scripts/validate-skills.py && python3 -m unittest tests/test_validate_skills.py\"",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    }
+  ]
+}

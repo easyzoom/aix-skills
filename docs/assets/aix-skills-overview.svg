@@ -1,0 +1,42 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">AIX Skills overview</title>
+  <desc id="desc">A visual overview of skills, templates, awesome resources, docs, and Docker validation.</desc>
+  <rect width="1200" height="420" rx="32" fill="#0f172a"/>
+  <circle cx="1040" cy="80" r="180" fill="#7c3aed" opacity="0.28"/>
+  <circle cx="160" cy="360" r="220" fill="#0f766e" opacity="0.28"/>
+  <path d="M0 320 C180 240 300 380 480 300 C680 210 790 280 980 190 C1080 145 1140 160 1200 130 V420 H0 Z" fill="#111827" opacity="0.7"/>
+  <text x="72" y="92" fill="#f8fafc" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="52" font-weight="800">AIX Skills</text>
+  <text x="74" y="132" fill="#cbd5e1" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="21">Reusable Agent Skills, templates, and curated references for repeatable AI workflows.</text>
+  <g transform="translate(72 188)">
+    <rect x="0" y="0" width="220" height="108" rx="20" fill="#1e293b" stroke="#334155"/>
+    <text x="24" y="44" fill="#f8fafc" font-family="Inter, ui-sans-serif, system-ui" font-size="25" font-weight="700">Skills</text>
+    <text x="24" y="76" fill="#94a3b8" font-family="Inter, ui-sans-serif, system-ui" font-size="16">Ready-to-use workflows</text>
+  </g>
+  <g transform="translate(330 188)">
+    <rect x="0" y="0" width="220" height="108" rx="20" fill="#1e293b" stroke="#334155"/>
+    <text x="24" y="44" fill="#f8fafc" font-family="Inter, ui-sans-serif, system-ui" font-size="25" font-weight="700">Templates</text>
+    <text x="24" y="76" fill="#94a3b8" font-family="Inter, ui-sans-serif, system-ui" font-size="16">Start new skills fast</text>
+  </g>
+  <g transform="translate(588 188)">
+    <rect x="0" y="0" width="220" height="108" rx="20" fill="#1e293b" stroke="#334155"/>
+    <text x="24" y="44" fill="#f8fafc" font-family="Inter, ui-sans-serif, system-ui" font-size="25" font-weight="700">Awesome</text>
+    <text x="24" y="76" fill="#94a3b8" font-family="Inter, ui-sans-serif, system-ui" font-size="16">Curated references</text>
+  </g>
+  <g transform="translate(846 188)">
+    <rect x="0" y="0" width="220" height="108" rx="20" fill="#1e293b" stroke="#334155"/>
+    <text x="24" y="44" fill="#f8fafc" font-family="Inter, ui-sans-serif, system-ui" font-size="25" font-weight="700">Docker Check</text>
+    <text x="24" y="76" fill="#94a3b8" font-family="Inter, ui-sans-serif, system-ui" font-size="16">Validate before sharing</text>
+  </g>
+  <g transform="translate(72 336)">
+    <rect x="0" y="0" width="196" height="36" rx="18" fill="#7c3aed"/>
+    <text x="22" y="24" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui" font-size="15" font-weight="700">3 first-party skills</text>
+  </g>
+  <g transform="translate(286 336)">
+    <rect x="0" y="0" width="210" height="36" rx="18" fill="#0f766e"/>
+    <text x="22" y="24" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui" font-size="15" font-weight="700">MIT licensed</text>
+  </g>
+  <g transform="translate(514 336)">
+    <rect x="0" y="0" width="254" height="36" rx="18" fill="#2563eb"/>
+    <text x="22" y="24" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui" font-size="15" font-weight="700">Public-ready structure</text>
+  </g>
+</svg>
