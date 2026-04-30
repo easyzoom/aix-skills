@@ -71,7 +71,7 @@ Before claiming progress:
 - List peripherals and rails still enabled.
 - State recovery method if debug access may be lost.
 
-## Common Mistakes
+## Common Failures
 
 - Measuring through USB while claiming battery current.
 - Leaving the debugger attached and trusting sleep current.

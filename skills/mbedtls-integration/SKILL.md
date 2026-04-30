@@ -17,7 +17,7 @@ Use this skill when:
 - The issue involves handshake failure, certificate validation, entropy source, RNG, memory allocation, time validity, or socket callbacks.
 - The target is resource-constrained or has hardware crypto/TRNG.
 
-Do not use this skill for generic networking before TCP/IP works. Use `lwip-integration` first when connectivity is unproven.
+Do not use this skill for generic networking before TCP/IP works. Use `lwip-integration` first when connectivity is unproven. For lightweight ECC-only operations, use `micro-ecc-integration` or `tinycrypt-integration`.
 
 ## First Questions
 

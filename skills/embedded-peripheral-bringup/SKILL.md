@@ -97,7 +97,7 @@ Before claiming bring-up progress:
 - Confirm expected versus observed timing or voltage.
 - If IRQ/DMA is involved, confirm the simpler polling path works or state why it cannot be tested.
 
-## Common Mistakes
+## Common Failures
 
 - Debugging driver code before checking pin mux and peripheral clock.
 - Trusting schematic labels without checking package pin and board net.

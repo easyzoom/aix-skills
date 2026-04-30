@@ -18,7 +18,7 @@ Use this skill when:
 - The issue involves image headers, checksums, signatures, slots, rollback, vector table relocation, or boot pins.
 - The user mentions MCUboot, U-Boot, vendor bootloader, IAP, DFU, app offset, or recovery mode.
 
-Do not use this skill for ordinary application crashes after a confirmed clean handoff; use `embedded-fault-debug`.
+Do not use this skill for ordinary application crashes after a confirmed clean handoff; use `embedded-fault-debug`. For MCUboot-specific slot/signing/swap issues, use `mcuboot-integration`. For OTA delivery pipeline issues, use `ota-update-integration`.
 
 ## First Questions
 
@@ -79,7 +79,7 @@ Before claiming progress:
 - State whether recovery remains available.
 - List destructive operations skipped or awaiting approval.
 
-## Common Mistakes
+## Common Failures
 
 - Flashing the app at flash base when the bootloader expects an offset.
 - Forgetting vector table relocation.

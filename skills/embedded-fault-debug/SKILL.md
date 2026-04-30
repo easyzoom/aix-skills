@@ -106,7 +106,7 @@ Before claiming a fault is understood:
 - State the suspected root cause and the evidence linking it to the fault.
 - State the next minimal verification step, such as watchpoint, stack watermark, or assertion.
 
-## Common Mistakes
+## Common Failures
 
 - Resetting immediately and losing the only useful fault state.
 - Trusting a backtrace when the ELF does not match flashed firmware.

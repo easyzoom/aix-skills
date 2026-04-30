@@ -17,7 +17,7 @@ Use this skill when:
 - The programmer reports connect, erase, program, verify, timeout, locked, protected, or target voltage errors.
 - The user mentions ST-Link, J-Link, CMSIS-DAP, OpenOCD, pyOCD, STC-ISP, WCH-Link, Nu-Link, vendor programmers, boot pins, ISP, IAP, DFU, or UART bootloader.
 
-Do not use this skill for application-level bugs after a confirmed successful program/verify/run cycle.
+Do not use this skill for application-level bugs after a confirmed successful program/verify/run cycle. For probe-specific debugging (OpenOCD scripts, J-Link config, adapter speed), use `openocd-jlink-stlink-debug`.
 
 ## First Questions
 
@@ -83,7 +83,7 @@ Before claiming flashing is fixed:
 - Confirm whether destructive actions were avoided, skipped, or explicitly approved.
 - If verify fails, report the first failing address or range if the tool provides it.
 
-## Common Mistakes
+## Common Failures
 
 - Recommending mass erase before confirming wiring and target voltage.
 - Selecting a similar but wrong MCU in the programmer.

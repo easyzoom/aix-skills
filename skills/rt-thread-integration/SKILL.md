@@ -23,7 +23,8 @@ Use this skill when:
   code but missing at runtime.
 
 Do not use this skill for a generic MCU peripheral with no RT-Thread component
-surface. Use `embedded-peripheral-bringup` first.
+surface. Use `embedded-peripheral-bringup` first. For generic RTOS scheduling
+triage, use `rtos-debug`.
 
 ## First Questions
 

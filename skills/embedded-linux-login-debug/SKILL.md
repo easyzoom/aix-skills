@@ -170,7 +170,7 @@ Before claiming the device is ready for debugging:
 - Confirm network identity from `ip addr` or the login target.
 - State any skipped checks and why.
 
-## Common Mistakes
+## Common Failures
 
 - Assuming SSH is available when the device only exposes serial console.
 - Asking for every possible credential before choosing a login method.

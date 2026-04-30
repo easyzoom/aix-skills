@@ -20,7 +20,7 @@ Use this skill when:
 
 Do not use this skill when:
 
-- The target is embedded Linux, RISC-V, AVR, ESP8266, ESP32 Xtensa, or another non-Cortex-M architecture.
+- The target is Cortex-R (use `cortex-r5-debug`), embedded Linux, RISC-V, AVR, ESP8266, ESP32 Xtensa, or another non-Cortex-M architecture.
 - The user only needs application-level C code review with no target-specific debug context.
 - The request is to modify production firmware or security configuration before collecting baseline evidence.
 
@@ -215,7 +215,7 @@ Before claiming progress:
 - If flashing was attempted, report erase/program/verify status separately.
 - List any destructive action skipped or waiting for user approval.
 
-## Common Mistakes
+## Common Failures
 
 - Debugging the wrong MCU target config.
 - Forgetting connect-under-reset when firmware disables SWD pins.

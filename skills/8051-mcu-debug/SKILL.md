@@ -198,7 +198,7 @@ Before claiming progress:
 - For interrupt issues, state the enable bits, vector number, flag behavior, and compiler ISR syntax.
 - List any risky action skipped or waiting for user approval.
 
-## Common Mistakes
+## Common Failures
 
 - Treating STC, Nuvoton, Silabs, and classic 8051 SFRs as interchangeable.
 - Selecting the wrong chip model in STC-ISP or vendor programmer.

@@ -17,7 +17,7 @@ Use this skill when:
 - The issue involves image validation, swap, overwrite-only upgrade, rollback, confirm flags, serial recovery, or signed images.
 - The project has dual slots, external flash, encrypted images, secure boot, or OTA requirements.
 
-Do not use this skill for application-level firmware transfer alone. Use `ota-update-integration` first if the bootloader is already fixed and the issue is delivery.
+Do not use this skill for application-level firmware transfer alone. Use `ota-update-integration` first if the bootloader is already fixed and the issue is delivery. For generic bootloader jump/handoff debugging, use `bootloader-debug`.
 
 ## First Questions
 

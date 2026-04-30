@@ -22,7 +22,8 @@ Use this skill when:
 - The same firmware behaves differently under debugger and standalone boot.
 
 Do not use this skill for application fault analysis after a stable debug
-session exists. Use the architecture-specific debug skill then.
+session exists. Use the architecture-specific debug skill then. For flash
+download failures focused on erase/program/verify, use `mcu-flashing-debug`.
 
 ## First Questions
 

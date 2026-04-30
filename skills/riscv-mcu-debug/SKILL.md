@@ -134,7 +134,7 @@ Before claiming progress:
 - Confirm flash erase/program/verify status separately if flashing was attempted.
 - List destructive actions skipped or awaiting approval.
 
-## Common Mistakes
+## Common Failures
 
 - Using the wrong `-march` or `-mabi` for the actual core.
 - Assuming all RISC-V MCUs have the same interrupt controller.

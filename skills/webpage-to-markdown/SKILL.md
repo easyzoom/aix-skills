@@ -77,7 +77,7 @@ Before claiming completion:
 - Check that important headings, lists, tables, code blocks, and links were not lost.
 - If a file was requested, confirm the file exists and contains Markdown.
 
-## Common Mistakes
+## Common Failures
 
 - Returning a summary instead of a Markdown conversion.
 - Keeping navigation, ads, cookie banners, or footer link dumps.

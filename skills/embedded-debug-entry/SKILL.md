@@ -24,7 +24,7 @@ Do not use this skill when the user already named a more specific skill path, su
 Ask only what is needed to route:
 
 - Target type: MCU, embedded Linux device, mixed SoC, module, or unknown board.
-- Architecture or chip family: Cortex-M, RISC-V, 8051, Linux-capable ARM, or unknown.
+- Architecture or chip family: Cortex-M, Cortex-R, RISC-V, 8051, Linux-capable ARM, or unknown.
 - Failure phase: cannot connect, cannot flash, no boot, crash/fault, no logs, peripheral failure, RTOS issue, bootloader issue, low-power issue.
 - Available access: SWD/JTAG, serial UART, SSH, ADB, Telnet, local console, logic analyzer, oscilloscope, or vendor tool.
 - Toolchain and artifacts: ELF/HEX/MAP, firmware log, programmer output, schematic, boot log, or fault dump.
@@ -36,15 +36,28 @@ Use the most specific path:
 | Symptom or target | Prefer |
 | --- | --- |
 | Cortex-M MCU, SWD/JTAG, HardFault, startup | `cortex-m-debug` |
+| Cortex-R5/R4/R7, TCM, MPU, lockstep, safety core | `cortex-r5-debug` |
 | 8051/51/STC/Nuvoton/Silabs C8051 | `8051-mcu-debug` |
 | RISC-V MCU, OpenOCD/GDB, trap, CSR | `riscv-mcu-debug` |
 | Embedded Linux login before debugging | `embedded-linux-login-debug` |
+| OpenOCD/J-Link/ST-Link probe, SWD/JTAG attach | `openocd-jlink-stlink-debug` |
 | Flash/download/verify/connect failure | `mcu-flashing-debug` |
-| UART boot log, serial console,乱码, no logs | `embedded-serial-log-debug` |
+| UART boot log, serial console, 乱码, no logs | `embedded-serial-log-debug` |
 | Crash, exception, trap, fault, stack corruption | `embedded-fault-debug` |
 | GPIO/UART/SPI/I2C/PWM/ADC bring-up | `embedded-peripheral-bringup` |
-| FreeRTOS, RT-Thread, Zephyr, scheduler issue | `rtos-debug` |
-| Bootloader, app jump, OTA, upgrade state | `bootloader-debug` |
+| Sensor driver, IMU, I2C/SPI sensor data | `sensor-driver-integration` |
+| QSPI/OSPI flash, XIP, memory-mapped boot | `qspi-xip-flash-debug` |
+| FreeRTOS kernel: tasks, heap, tick, ISR API | `freertos-kernel-debug` |
+| Zephyr devicetree, Kconfig, west, drivers | `zephyr-integration` |
+| RT-Thread BSP, FinSH, device framework, DFS | `rt-thread-integration` |
+| General RTOS scheduling, stacks, priorities | `rtos-debug` |
+| STM32 HAL/LL, CubeMX, clocks, DMA, NVIC | `stm32-hal-ll-integration` |
+| ESP-IDF, sdkconfig, partitions, NVS, Wi-Fi | `esp-idf-integration` |
+| Nordic nRF Connect SDK, BLE, DFU, Partition Mgr | `nrf-connect-sdk-integration` |
+| BLE GATT services, characteristics, MTU, pairing | `ble-gatt-integration` |
+| Bootloader, app jump, upgrade state | `bootloader-debug` |
+| MCUboot image slots, signing, swap, rollback | `mcuboot-integration` |
+| OTA package, transport, validation, activation | `ota-update-integration` |
 | Sleep, wakeup, current consumption, lost debug | `low-power-debug` |
 | Power, reset, clock, pins, board-level signals | `hardware-interface-debug` |
 
@@ -73,7 +86,7 @@ Before moving into a specialized workflow:
 - State what evidence is already available and what is still missing.
 - Confirm no destructive operation has been recommended without approval.
 
-## Common Mistakes
+## Common Failures
 
 - Treating every embedded issue as a firmware code problem.
 - Asking for every possible tool output before choosing a debug path.

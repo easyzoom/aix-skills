@@ -78,7 +78,7 @@ Before claiming hardware evidence:
 - State whether the measurement supports or contradicts the firmware assumption.
 - List unsafe hardware actions avoided or awaiting approval.
 
-## Common Mistakes
+## Common Failures
 
 - Measuring only at the connector and not at the MCU pin.
 - Forgetting common ground for UART/debug adapters.

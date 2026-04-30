@@ -17,7 +17,7 @@ Use this skill when:
 - The issue involves partial downloads, checksum failures, signature validation, resume, rollback, version checks, or update state machines.
 - The target uses MCUboot, a vendor bootloader, A/B partitions, recovery mode, or external flash staging.
 
-Do not use this skill for bootloader internals. Use `mcuboot-integration` when the image activation or swap logic itself is failing.
+Do not use this skill for bootloader internals. Use `mcuboot-integration` when the image activation or swap logic itself is failing. For generic bootloader jump/handoff debugging, use `bootloader-debug`.
 
 ## First Questions
 

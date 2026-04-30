@@ -50,7 +50,17 @@ Do not use it for one-off project notes, private runbooks, or generic documentat
 - Body explains workflow and verification.
 - Public examples contain no secrets or private data.
 
-## Common Mistakes
+## Verification
+
+Before publishing a new or updated skill:
+
+- Run `python3 scripts/validate-skills.py` and confirm zero errors.
+- Confirm the frontmatter `name` matches the folder name exactly.
+- Confirm the `description` starts with `Use when` and describes the trigger situation.
+- Confirm at least one realistic example and one verification section exist in the body.
+- Confirm no secrets, internal URLs, or private tool assumptions are in the public skill.
+
+## Common Failures
 
 - **Description summarizes the workflow**: descriptions are for discovery; the body is for process.
 - **Skill is too broad**: split unrelated workflows into separate skills.

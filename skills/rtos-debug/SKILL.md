@@ -17,7 +17,7 @@ Use this skill when:
 - The user reports deadlock, starvation, missed events, queue timeout, stack overflow, watchdog reset, priority inversion, or task not running.
 - The issue involves ISR-to-task signaling, timers, semaphores, mutexes, message queues, or task notifications.
 
-Do not use this skill before the target is known to boot and run at least some firmware.
+Do not use this skill before the target is known to boot and run at least some firmware. For RTOS-specific deep dives, prefer `freertos-kernel-debug`, `zephyr-integration`, or `rt-thread-integration` when the RTOS is identified.
 
 ## First Questions
 
@@ -71,7 +71,7 @@ Before claiming RTOS progress:
 - State whether interrupt priorities are legal for RTOS API usage.
 - Report any assertion, watchdog, or stack overflow hook evidence.
 
-## Common Mistakes
+## Common Failures
 
 - Raising task priority without knowing why it is blocked.
 - Adding delays to hide races.

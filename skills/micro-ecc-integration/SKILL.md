@@ -16,7 +16,7 @@ Use this skill when:
 - The user wants ECDH, ECDSA, public/private key generation, signature verification, or ECC on an MCU using micro-ecc.
 - The issue involves bad signatures, key mismatch, RNG, curve selection, endian/format mismatch, or slow scalar multiplication.
 
-Do not use this skill for full TLS stacks. Use `mbedtls-integration` for TLS.
+Do not use this skill for full TLS stacks. Use `mbedtls-integration` for TLS. For AES/SHA/HMAC primitives, use `tinycrypt-integration`.
 
 ## First Questions
 

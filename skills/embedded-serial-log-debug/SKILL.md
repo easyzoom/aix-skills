@@ -87,7 +87,7 @@ Before trusting serial evidence:
 - Report whether the output is clean, garbled, absent, or partial.
 - If logs are absent, state which lower-layer checks passed and which remain unverified.
 
-## Common Mistakes
+## Common Failures
 
 - Debugging firmware before confirming the adapter voltage and common ground.
 - Opening the terminal after early boot logs already passed.

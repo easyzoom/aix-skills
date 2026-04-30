@@ -17,7 +17,7 @@ Use this skill when:
 - The task involves AES, SHA, HMAC, CTR, CCM, ECC, RNG, key storage, message authentication, or encrypted firmware/data.
 - Outputs do not match known vectors or peer devices.
 
-Do not use this skill for TLS session integration. Use `mbedtls-integration` for full TLS.
+Do not use this skill for TLS session integration. Use `mbedtls-integration` for full TLS. For standalone ECDH/ECDSA operations, use `micro-ecc-integration`.
 
 ## First Questions
 

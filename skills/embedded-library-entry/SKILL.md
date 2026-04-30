@@ -32,14 +32,125 @@ Ask only what is needed to route:
 
 ## Routing Guide
 
+**Storage & Filesystem**
+
 | Library or task | Prefer |
 | --- | --- |
 | littlefs filesystem or block device | `littlefs-integration` |
+| FatFs disk I/O, FAT/exFAT | `fatfs-integration` |
 | FlashDB KV/time-series database | `flashdb-integration` |
+
+**Logging & Diagnosis**
+
+| Library or task | Prefer |
+| --- | --- |
 | EasyLogger output, filters, async logs | `easylogger-integration` |
-| Cortex-M crash backtrace with CmBacktrace | `cmbacktrace-integration` |
+| CmBacktrace Cortex-M crash backtrace | `cmbacktrace-integration` |
+| SEGGER RTT logs, control block, J-Link I/O | `segger-rtt-integration` |
+
+**Shell & CLI**
+
+| Library or task | Prefer |
+| --- | --- |
 | letter-shell command shell | `letter-shell-integration` |
-| MCU flash, erase, verify, or programmer failure | `mcu-flashing-debug` |
+| nr_micro_shell tiny CLI | `nr-micro-shell-integration` |
+| zoom-shell embedded console | `zoom-shell-integration` |
+
+**Networking & Protocols**
+
+| Library or task | Prefer |
+| --- | --- |
+| lwIP netif, DHCP, TCP, UDP | `lwip-integration` |
+| FreeRTOS+TCP network driver, sockets | `freertos-plus-tcp-integration` |
+| MQTT client, keepalive, QoS, TLS | `mqtt-embedded-integration` |
+| FreeModbus RTU, ASCII, TCP | `freemodbus-integration` |
+| OpenThread radio, mesh, commissioning | `openthread-integration` |
+| CAN bus library, MCP2515, bit timing | `canbus-integration` |
+| CANopen OD, NMT, SDO, PDO, heartbeat | `canopen-integration` |
+| BLE GATT services, characteristics, MTU | `ble-gatt-integration` |
+
+**UI & Display**
+
+| Library or task | Prefer |
+| --- | --- |
+| LVGL display, input, tick, draw buffers | `lvgl-integration` |
+| U8g2 monochrome display, fonts | `u8g2-integration` |
+| E-paper EPD, busy timing, refresh modes | `epd-integration` |
+| TJpgDec embedded JPEG decoding | `tjpgd-integration` |
+
+**Security & Crypto**
+
+| Library or task | Prefer |
+| --- | --- |
+| mbedTLS entropy, certificates, TLS handshake | `mbedtls-integration` |
+| micro-ecc ECDH, ECDSA, keys, signatures | `micro-ecc-integration` |
+| TinyCrypt AES, SHA, HMAC, ECC | `tinycrypt-integration` |
+
+**Data & Serialization**
+
+| Library or task | Prefer |
+| --- | --- |
+| cJSON, jsmn, inih parsers | `embedded-data-parsing-libs` |
+| nanopb Protocol Buffers | `nanopb-integration` |
+| CRC, checksum, integrity checks | `crc-checksum-integration` |
+
+**USB & Transfer**
+
+| Library or task | Prefer |
+| --- | --- |
+| TinyUSB device, host, CDC, MSC, HID | `tinyusb-integration` |
+| XMODEM/YMODEM serial transfer, bootloader | `ymodem-xmodem-integration` |
+
+**Boot & OTA**
+
+| Library or task | Prefer |
+| --- | --- |
+| MCUboot secure boot, slots, signing | `mcuboot-integration` |
+| OTA package, transport, rollback | `ota-update-integration` |
+
+**Compression**
+
+| Library or task | Prefer |
+| --- | --- |
+| miniz DEFLATE, zlib, ZIP | `miniz-integration` |
+| heatshrink streaming compression | `heatshrink-integration` |
+
+**DSP & ML**
+
+| Library or task | Prefer |
+| --- | --- |
+| CMSIS-DSP math, FFT, filters | `cmsis-dsp-integration` |
+| TinyMaix MCU inference, model loading | `tinymaix-integration` |
+
+**Input, Timers & State Machines**
+
+| Library or task | Prefer |
+| --- | --- |
+| MultiButton, FlexibleButton | `embedded-input-libs` |
+| MultiTimer, software timers | `embedded-timing-libs` |
+| Ring buffer, FIFO, MCU queues | `embedded-buffer-queue-libs` |
+| State machine libraries | `embedded-state-machine-libs` |
+
+**Frameworks & Patterns**
+
+| Library or task | Prefer |
+| --- | --- |
+| PLOOC object-oriented C | `plooc-integration` |
+| Avem event-driven components | `avem-integration` |
+| Power management framework | `power-management-integration` |
+| Embedded app examples adaptation | `embedded-app-example-libs` |
+
+**Testing**
+
+| Library or task | Prefer |
+| --- | --- |
+| Unity, Ceedling, CMock embedded C tests | `unity-ceedling-integration` |
+
+**Fallback (not a library issue)**
+
+| Symptom | Prefer |
+| --- | --- |
+| MCU flash, erase, verify failure | `mcu-flashing-debug` |
 | UART transport or missing logs | `embedded-serial-log-debug` |
 | RTOS task, mutex, queue, stack issue | `rtos-debug` |
 | Board power, reset, pin, or signal issue | `hardware-interface-debug` |
@@ -70,7 +181,7 @@ Before moving to a specific library workflow:
 - Identify required porting hooks and missing inputs.
 - Confirm no data-destructive action has been recommended without approval.
 
-## Common Mistakes
+## Common Failures
 
 - Treating a library as portable because it compiles on desktop.
 - Enabling all optional features before the minimal port works.

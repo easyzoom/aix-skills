@@ -94,7 +94,7 @@ Before claiming completion:
 - Check that badges and images render from valid URLs or local files.
 - Re-read the first screen and verify it answers: what is this, why care, how do I start?
 
-## Common Mistakes
+## Common Failures
 
 - Starting with a long backstory instead of a clear value proposition.
 - Including installation commands that do not match the repository.

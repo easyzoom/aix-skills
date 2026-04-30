@@ -17,7 +17,7 @@ Use this skill when:
 - The issue involves `lwipopts.h`, `sys_arch`, `netif`, DHCP, TCP/UDP, pbufs, memory pools, packet loss, or hard faults in networking.
 - The target uses Ethernet, Wi-Fi, PPP, SLIP, or a vendor network interface.
 
-Do not use this skill when the physical link or board interface is not proven. Use `hardware-interface-debug` first for PHY, RMII/MII, clocks, or wiring issues.
+Do not use this skill when the physical link or board interface is not proven. Use `hardware-interface-debug` first for PHY, RMII/MII, clocks, or wiring issues. For FreeRTOS-native TCP/IP, use `freertos-plus-tcp-integration`. For MQTT over lwIP, use `mqtt-embedded-integration` after basic connectivity works.
 
 ## First Questions
 
