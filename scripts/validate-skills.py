@@ -18,6 +18,10 @@ except ModuleNotFoundError as exc:  # pragma: no cover
 NAME_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 REQUIRED_FIELDS = ("name", "description")
 
+README_FILES = ("README.md", "README.zh-CN.md")
+TABLE_ROW_PATTERN = re.compile(r"^\| `([a-z0-9][a-z0-9-]*)`")
+SKILL_BADGE_PATTERN = re.compile(r"badge/skills-(\d+)-")
+
 
 def parse_frontmatter(path: Path) -> tuple[dict[str, str], list[str]]:
     text = path.read_text(encoding="utf-8")
@@ -80,6 +84,43 @@ def validate_skill(skill_dir: Path) -> list[str]:
     return errors
 
 
+def validate_readme_sync(root: Path, skill_names: list[str]) -> list[str]:
+    """Ensure each README's skills table matches the skills/ directory."""
+    errors: list[str] = []
+    skill_set = set(skill_names)
+    skill_count = len(skill_names)
+
+    for readme_name in README_FILES:
+        readme_path = root / readme_name
+        if not readme_path.exists():
+            continue
+
+        text = readme_path.read_text(encoding="utf-8")
+        listed: list[str] = []
+        for line in text.splitlines():
+            match = TABLE_ROW_PATTERN.match(line)
+            if match:
+                listed.append(match.group(1))
+        listed_set = set(listed)
+
+        for missing in sorted(skill_set - listed_set):
+            errors.append(f"{readme_path}: skill '{missing}' is missing from the skills table")
+        for extra in sorted(listed_set - skill_set):
+            errors.append(f"{readme_path}: skills table lists '{extra}', which has no skills/ directory")
+
+        duplicates = sorted({name for name in listed if listed.count(name) > 1})
+        if duplicates:
+            errors.append(f"{readme_path}: skills table has duplicate rows: {', '.join(duplicates)}")
+
+        badge = SKILL_BADGE_PATTERN.search(text)
+        if badge and int(badge.group(1)) != skill_count:
+            errors.append(
+                f"{readme_path}: skills badge says {badge.group(1)} but there are {skill_count} skill(s)"
+            )
+
+    return errors
+
+
 def validate_repo(root: Path) -> list[str]:
     skills_dir = root / "skills"
     if not skills_dir.exists():
@@ -92,6 +133,8 @@ def validate_repo(root: Path) -> list[str]:
     errors: list[str] = []
     for skill_dir in skill_dirs:
         errors.extend(validate_skill(skill_dir))
+
+    errors.extend(validate_readme_sync(root, [skill_dir.name for skill_dir in skill_dirs]))
     return errors
 
 

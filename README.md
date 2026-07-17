@@ -11,7 +11,7 @@ English | [简体中文](README.zh-CN.md)
 
 AIX Skills is a public collection of Agent Skills, templates, and references for building repeatable AI workflows.
 
-This repository uses a hybrid structure: first-party skills that can be used directly, templates and authoring guidance for creating new skills, and a curated directory of external resources.
+This repository uses a hybrid structure: first-party skills that can be used directly, plus templates and authoring guidance for creating new skills.
 
 ## What Is An Agent Skill?
 
@@ -32,7 +32,6 @@ A good skill should have:
 .
 ├── skills/                 # First-party skills maintained in this repo
 ├── template/               # Copyable templates for new skills
-├── awesome/                # Curated external skill resources
 ├── docs/                   # Maintainer guides and publishing checklists
 ├── scripts/                # Repository validation tools
 ├── CONTRIBUTING.md         # Contribution guide

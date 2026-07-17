@@ -35,7 +35,7 @@ The number may change as the repository grows.
 
 ## Review
 
-- Check links in `README.md` and `awesome/README.md`.
+- Check links in `README.md` and `README.zh-CN.md`.
 - Confirm `CONTRIBUTING.md` matches the current repository structure.
 - Confirm issue and pull request templates are useful for external contributors.
 - Review `git diff` for accidental generated files or local-only notes.

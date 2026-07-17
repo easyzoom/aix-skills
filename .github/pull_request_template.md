@@ -6,7 +6,6 @@ Describe what this pull request changes and why.
 
 - [ ] New skill
 - [ ] Skill update
-- [ ] Awesome resource
 - [ ] Documentation
 - [ ] Tooling or validation
 

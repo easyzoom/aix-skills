@@ -117,5 +117,101 @@ class ValidateSkillsTest(unittest.TestCase):
         self.assertTrue(any("description must start with 'Use when'" in error for error in errors))
 
 
+    def _make_skill(self, root, name):
+        skill_dir = root / "skills" / name
+        skill_dir.mkdir(parents=True)
+        (skill_dir / "SKILL.md").write_text(
+            textwrap.dedent(
+                f"""\
+                ---
+                name: {name}
+                description: Use when testing {name}
+                ---
+
+                # {name}
+                """
+            ),
+            encoding="utf-8",
+        )
+
+    def test_flags_readme_out_of_sync(self):
+        validator = load_validator()
+
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            self._make_skill(root, "alpha-skill")
+            self._make_skill(root, "beta-skill")
+            (root / "README.md").write_text(
+                textwrap.dedent(
+                    """\
+                    # Repo
+
+                    | Skill | Purpose |
+                    | --- | --- |
+                    | `alpha-skill` | Does alpha things. |
+                    | `gamma-skill` | Stale row. |
+                    """
+                ),
+                encoding="utf-8",
+            )
+
+            errors = validator.validate_repo(root)
+
+        self.assertTrue(any("beta-skill' is missing" in error for error in errors))
+        self.assertTrue(
+            any("gamma-skill" in error and "no skills/ directory" in error for error in errors)
+        )
+
+    def test_flags_stale_skill_badge_count(self):
+        validator = load_validator()
+
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            self._make_skill(root, "alpha-skill")
+            (root / "README.md").write_text(
+                textwrap.dedent(
+                    """\
+                    # Repo
+
+                    ![Skills](https://img.shields.io/badge/skills-9-7c3aed)
+
+                    | Skill | Purpose |
+                    | --- | --- |
+                    | `alpha-skill` | Does alpha things. |
+                    """
+                ),
+                encoding="utf-8",
+            )
+
+            errors = validator.validate_repo(root)
+
+        self.assertTrue(any("skills badge says 9 but there are 1" in error for error in errors))
+
+    def test_accepts_readme_in_sync(self):
+        validator = load_validator()
+
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            self._make_skill(root, "alpha-skill")
+            self._make_skill(root, "beta-skill")
+            (root / "README.md").write_text(
+                textwrap.dedent(
+                    """\
+                    # Repo
+
+                    ![Skills](https://img.shields.io/badge/skills-2-7c3aed)
+
+                    | Skill | Purpose |
+                    | --- | --- |
+                    | `alpha-skill` | Does alpha things. |
+                    | `beta-skill` | Does beta things. |
+                    """
+                ),
+                encoding="utf-8",
+            )
+
+            self.assertEqual(validator.validate_repo(root), [])
+
+
 if __name__ == "__main__":
     unittest.main()

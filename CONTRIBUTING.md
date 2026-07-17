@@ -6,7 +6,6 @@ This repository welcomes:
 
 - New first-party skills under `skills/`.
 - Improvements to existing skills.
-- Curated resources for `awesome/`.
 - Documentation and validation improvements.
 
 ## Add A New Skill
@@ -50,15 +49,6 @@ Pull requests are reviewed for:
 - Portability: supporting files stay inside the skill folder.
 - Practicality: instructions are repeatable and verifiable.
 - Scope: one skill should cover one coherent workflow.
-
-## Add An Awesome Resource
-
-Edit `awesome/README.md` and include:
-
-- Resource name and link.
-- One sentence describing the value.
-- The most relevant category.
-- Any license or usage caveat if known.
 
 ## Commit Style
 

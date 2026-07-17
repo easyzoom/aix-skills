@@ -8,7 +8,6 @@ This repository is organized for three audiences: users, contributors, and maint
 | --- | --- |
 | `skills/` | First-party skills maintained by this repository. |
 | `template/` | Copyable starting points for new skills. |
-| `awesome/` | Curated external skills and references. |
 | `docs/` | Authoring, review, and publishing guidance. |
 | `scripts/` | Validation and maintenance tools. |
 | `.github/` | Issue and pull request templates. |
@@ -39,7 +38,6 @@ The repository should grow in this order:
 
 1. Add or improve a first-party skill.
 2. Add validation or documentation that helps future contributors.
-3. Add curated resources to `awesome/`.
-4. Add automation only after a repeated manual task emerges.
+3. Add automation only after a repeated manual task emerges.
 
 This keeps the repository useful without becoming a framework too early.
