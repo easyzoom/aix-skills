@@ -5,7 +5,7 @@ English | [简体中文](README.zh-CN.md)
 ![AIX Skills Overview](docs/assets/aix-skills-overview.svg)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-72-7c3aed)
+![Skills](https://img.shields.io/badge/skills-76-7c3aed)
 ![Validation](https://img.shields.io/badge/validation-docker%20ready-16a34a)
 ![Agent Skills](https://img.shields.io/badge/agent--skills-public-0f766e)
 
@@ -44,10 +44,12 @@ A good skill should have:
 | --- | --- |
 | `8051-mcu-debug` | Helps agents debug 8051-compatible MCU firmware, downloads, clocks, interrupts, and peripherals. |
 | `avem-integration` | Helps agents integrate and evaluate Avem embedded C framework modules. |
+| `battery-charger-fuel-gauge-integration` | Helps agents integrate and debug Li-ion charger and fuel gauge ICs (BQ24295, BQ27441, MAX17048) over I2C: input limit, watchdog host mode, CC/CV, NTC/JEITA faults, and SOC profile calibration. |
 | `ble-gatt-integration` | Helps agents integrate BLE GATT services, characteristics, MTU, security, and throughput. |
 | `bootloader-debug` | Helps agents debug bootloaders, app jumps, firmware upgrade state, and rollback paths. |
 | `canbus-integration` | Helps agents integrate CAN bus libraries, CANBus-Triple, MCP2515, filters, and bit timing. |
 | `canopen-integration` | Helps agents integrate CANopen object dictionaries, NMT, SDO, PDO, heartbeat, and EDS/DCF files. |
+| `cellular-at-modem-integration` | Helps agents integrate and debug Quectel, SIMCom, and u-blox cellular AT modems over UART for network registration, APN/PDP context, per-family TCP/UDP socket stacks (Quectel QIOPEN, SIMCom CIPSTART or NETOPEN/CIPOPEN, u-blox USOCx), URC parsing, and PSM/eDRX power saving. |
 | `cmbacktrace-integration` | Helps agents integrate CmBacktrace for Cortex-M crash reports and stack backtraces. |
 | `cmsis-dsp-integration` | Helps agents integrate CMSIS-DSP math, FFT, filters, and fixed-point processing. |
 | `cortex-m-debug` | Helps agents debug Cortex-M firmware, faults, startup code, and SWD/JTAG sessions. |
@@ -74,6 +76,7 @@ A good skill should have:
 | `freemodbus-integration` | Helps agents integrate FreeModbus RTU, ASCII, TCP, ports, timers, and register callbacks. |
 | `freertos-kernel-debug` | Helps agents debug FreeRTOS tasks, priorities, stacks, heap, tick, ISR APIs, and deadlocks. |
 | `freertos-plus-tcp-integration` | Helps agents integrate FreeRTOS+TCP network drivers, buffers, sockets, and IP tasks. |
+| `gnss-gps-integration` | Helps agents integrate UART GNSS/GPS modules (u-blox NEO-M8N/M9N, MAX-M10, Quectel L76/L80/LC76), parse NMEA GGA/RMC/GSA/GSV and UBX-NAV-PVT, and debug no-fix, TTFF, checksum, and PPS issues. |
 | `hardware-interface-debug` | Helps agents debug board-level power, reset, clock, pin, and signal issues. |
 | `heatshrink-integration` | Helps agents integrate heatshrink compression, streaming buffers, and decompression checks. |
 | `letter-shell-integration` | Helps agents integrate letter-shell command consoles and guard debug commands. |
@@ -104,6 +107,7 @@ A good skill should have:
 | `sensor-driver-integration` | Helps agents integrate MCU sensor drivers, bus transport, interrupts, FIFO, timing, and calibration. |
 | `skill-writing-guide` | Teaches agents how to write concise, discoverable, testable skills for this repository. |
 | `stm32-hal-ll-integration` | Helps agents integrate STM32 HAL/LL, CubeMX code, clocks, GPIO, DMA, NVIC, and callbacks. |
+| `tflite-micro-integration` | Helps agents integrate TensorFlow Lite Micro (LiteRT for Microcontrollers) on MCUs — MicroInterpreter, op resolver registration, tensor arena sizing, int8 quantization, and Invoke. |
 | `tinycrypt-integration` | Helps agents integrate TinyCrypt primitives, modes, nonces, tags, and test vectors. |
 | `tinymaix-integration` | Helps agents integrate TinyMaix MCU inference, model loading, tensors, and memory. |
 | `tinyusb-integration` | Helps agents integrate TinyUSB device, host, descriptors, endpoints, and USB classes. |
