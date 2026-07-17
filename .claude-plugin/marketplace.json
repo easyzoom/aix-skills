@@ -1,0 +1,14 @@
+{
+  "name": "aix-skills",
+  "description": "Reusable Agent Skills for embedded systems, MCU debugging, firmware workflows, and AI automation.",
+  "owner": {
+    "name": "easyzoom"
+  },
+  "plugins": [
+    {
+      "name": "aix-skills",
+      "source": "./",
+      "description": "All embedded, MCU debugging, firmware, and library-integration Agent Skills maintained in this repository."
+    }
+  ]
+}

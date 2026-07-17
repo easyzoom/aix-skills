@@ -34,9 +34,10 @@ This repository welcomes:
    - Common mistakes.
    - One strong example if useful.
 
-4. Run validation:
+4. Run validation (requires PyYAML):
 
    ```bash
+   pip install pyyaml
    python3 scripts/validate-skills.py
    ```
 

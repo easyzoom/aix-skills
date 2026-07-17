@@ -22,4 +22,4 @@ jobs:
             -v "${{ github.workspace }}:/workspace" \
             -w /workspace \
             python:3.12-slim \
-            bash -lc "python3 scripts/validate-skills.py && python3 -m unittest tests/test_validate_skills.py"
+            bash -lc "pip install --quiet pyyaml && python3 scripts/validate-skills.py && python3 -m unittest tests/test_validate_skills.py"

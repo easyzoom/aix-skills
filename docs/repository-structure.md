@@ -12,6 +12,9 @@ This repository is organized for three audiences: users, contributors, and maint
 | `docs/` | Authoring, review, and publishing guidance. |
 | `scripts/` | Validation and maintenance tools. |
 | `.github/` | Issue and pull request templates. |
+| `.claude-plugin/` | `marketplace.json` that exposes the repository as a Claude Code plugin marketplace. |
+
+The marketplace defines a single plugin whose source is the repository root (`"./"`), so the top-level `skills/` directory is served directly with no per-skill restructuring.
 
 ## Skill Directory Contract
 

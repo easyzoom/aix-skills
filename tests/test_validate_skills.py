@@ -40,6 +40,56 @@ class ValidateSkillsTest(unittest.TestCase):
 
             self.assertEqual(validator.validate_repo(root), [])
 
+    def test_accepts_folded_scalar_description(self):
+        validator = load_validator()
+
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            skill_dir = root / "skills" / "folded-skill"
+            skill_dir.mkdir(parents=True)
+            (skill_dir / "SKILL.md").write_text(
+                textwrap.dedent(
+                    """\
+                    ---
+                    name: folded-skill
+                    description: >
+                      Use when a skill needs a long description that spans
+                      multiple lines for readability
+                    ---
+
+                    # Folded Skill
+                    """
+                ),
+                encoding="utf-8",
+            )
+
+            self.assertEqual(validator.validate_repo(root), [])
+
+    def test_rejects_invalid_yaml_frontmatter(self):
+        validator = load_validator()
+
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            skill_dir = root / "skills" / "broken-skill"
+            skill_dir.mkdir(parents=True)
+            (skill_dir / "SKILL.md").write_text(
+                textwrap.dedent(
+                    """\
+                    ---
+                    name: broken-skill
+                    description: "Use when unbalanced quotes break parsing
+                    ---
+
+                    # Broken Skill
+                    """
+                ),
+                encoding="utf-8",
+            )
+
+            errors = validator.validate_repo(root)
+
+        self.assertTrue(any("invalid YAML frontmatter" in error for error in errors))
+
     def test_rejects_name_mismatch_and_bad_description(self):
         validator = load_validator()
 

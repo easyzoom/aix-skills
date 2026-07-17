@@ -7,6 +7,13 @@ import re
 import sys
 from pathlib import Path
 
+try:
+    import yaml
+except ModuleNotFoundError as exc:  # pragma: no cover
+    raise SystemExit(
+        "validate-skills.py requires PyYAML. Install it with 'pip install pyyaml'."
+    ) from exc
+
 
 NAME_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 REQUIRED_FIELDS = ("name", "description")
@@ -21,17 +28,23 @@ def parse_frontmatter(path: Path) -> tuple[dict[str, str], list[str]]:
     if end == -1:
         return {}, [f"{path}: frontmatter is not closed"]
 
+    try:
+        data = yaml.safe_load(text[4:end])
+    except yaml.YAMLError as error:
+        return {}, [f"{path}: invalid YAML frontmatter: {error}"]
+
+    if data is None:
+        return {}, []
+    if not isinstance(data, dict):
+        return {}, [f"{path}: frontmatter must be a mapping of 'key: value' pairs"]
+
     fields: dict[str, str] = {}
     errors: list[str] = []
-    for line_number, raw_line in enumerate(text[4:end].splitlines(), start=2):
-        line = raw_line.strip()
-        if not line or line.startswith("#"):
+    for key, value in data.items():
+        if isinstance(value, (dict, list)):
+            errors.append(f"{path}: field '{key}' must be a scalar value")
             continue
-        if ":" not in line:
-            errors.append(f"{path}:{line_number}: expected 'key: value'")
-            continue
-        key, value = line.split(":", 1)
-        fields[key.strip()] = value.strip().strip("\"'")
+        fields[str(key)] = "" if value is None else str(value).strip()
 
     return fields, errors
 

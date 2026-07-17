@@ -54,6 +54,7 @@ A good skill should have:
 | `cortex-m-debug` | Helps agents debug Cortex-M firmware, faults, startup code, and SWD/JTAG sessions. |
 | `cortex-r5-debug` | Helps agents debug Cortex-R5 startup, TCM, MPU/cache, exceptions, interrupts, and core modes. |
 | `crc-checksum-integration` | Helps agents implement and verify CRCs, checksums, byte coverage, and protocol integrity checks. |
+| `easylogger-integration` | Helps agents integrate EasyLogger output, timestamps, filters, and embedded log backends. |
 | `embedded-app-example-libs` | Helps agents adapt embedded application examples without copying unsafe assumptions. |
 | `embedded-buffer-queue-libs` | Helps agents integrate ring buffers, circular buffers, FIFOs, and MCU queues. |
 | `embedded-data-parsing-libs` | Helps agents integrate cJSON, jsmn, inih, and small embedded parsers safely. |
@@ -67,7 +68,6 @@ A good skill should have:
 | `embedded-serial-log-debug` | Helps agents collect and trust serial UART logs, boot consoles, and missing-output evidence. |
 | `embedded-state-machine-libs` | Helps agents integrate embedded state-machine libraries and event-driven workflows. |
 | `embedded-timing-libs` | Helps agents integrate MultiTimer and lightweight software timer libraries. |
-| `easylogger-integration` | Helps agents integrate EasyLogger output, timestamps, filters, and embedded log backends. |
 | `epd-integration` | Helps agents integrate e-paper displays, busy timing, framebuffer layout, and refresh modes. |
 | `esp-idf-integration` | Helps agents integrate ESP-IDF components, sdkconfig, partitions, bootloader, NVS, Wi-Fi, BLE, and flash. |
 | `fatfs-integration` | Helps agents integrate FatFs disk I/O, FAT/exFAT configuration, and file persistence. |
@@ -89,8 +89,8 @@ A good skill should have:
 | `miniz-integration` | Helps agents integrate miniz compression, DEFLATE/zlib data, ZIP archives, and embedded buffers. |
 | `mqtt-embedded-integration` | Helps agents integrate embedded MQTT clients, keepalive, QoS, TLS, and reconnect flows. |
 | `nanopb-integration` | Helps agents integrate nanopb Protocol Buffers generation, encoding, and decoding. |
-| `nrf-connect-sdk-integration` | Helps agents integrate Nordic nRF Connect SDK, Zephyr, BLE, Partition Manager, DFU, and nrfx. |
 | `nr-micro-shell-integration` | Helps agents integrate nr_micro_shell tiny command consoles and bounded CLI buffers. |
+| `nrf-connect-sdk-integration` | Helps agents integrate Nordic nRF Connect SDK, Zephyr, BLE, Partition Manager, DFU, and nrfx. |
 | `openocd-jlink-stlink-debug` | Helps agents debug OpenOCD, J-Link, ST-Link, probe attach, reset, flash, and GDB sessions. |
 | `openthread-integration` | Helps agents integrate OpenThread radio platforms, commissioning, datasets, and mesh behavior. |
 | `ota-update-integration` | Helps agents design and debug OTA package, transport, validation, activation, and rollback flows. |
@@ -105,10 +105,10 @@ A good skill should have:
 | `sensor-driver-integration` | Helps agents integrate MCU sensor drivers, bus transport, interrupts, FIFO, timing, and calibration. |
 | `skill-writing-guide` | Teaches agents how to write concise, discoverable, testable skills for this repository. |
 | `stm32-hal-ll-integration` | Helps agents integrate STM32 HAL/LL, CubeMX code, clocks, GPIO, DMA, NVIC, and callbacks. |
-| `tjpgd-integration` | Helps agents integrate TJpgDec embedded JPEG decoding, callbacks, buffers, and display output. |
-| `tinymaix-integration` | Helps agents integrate TinyMaix MCU inference, model loading, tensors, and memory. |
 | `tinycrypt-integration` | Helps agents integrate TinyCrypt primitives, modes, nonces, tags, and test vectors. |
+| `tinymaix-integration` | Helps agents integrate TinyMaix MCU inference, model loading, tensors, and memory. |
 | `tinyusb-integration` | Helps agents integrate TinyUSB device, host, descriptors, endpoints, and USB classes. |
+| `tjpgd-integration` | Helps agents integrate TJpgDec embedded JPEG decoding, callbacks, buffers, and display output. |
 | `u8g2-integration` | Helps agents integrate U8g2 displays, bus callbacks, fonts, and small embedded UI. |
 | `unity-ceedling-integration` | Helps agents add Unity, Ceedling, CMock, fixtures, and CI tests for embedded C. |
 | `webpage-to-markdown` | Converts a public webpage URL into clean Markdown content. |
@@ -120,21 +120,41 @@ Each skill lives in its own folder under `skills/` and uses `SKILL.md` as the en
 
 ## Quickstart
 
-Copy a skill folder into your agent's skill directory, or install it with the skill manager used by your environment if supported.
+### Install as a Claude Code plugin (recommended)
+
+This repository is a [Claude Code plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces). Add the marketplace once, then install all skills:
+
+```text
+/plugin marketplace add easyzoom/aix-skills
+/plugin install aix-skills@aix-skills
+```
+
+Pull the latest skills later with:
+
+```text
+/plugin marketplace update aix-skills
+```
+
+### Copy a single skill (fallback)
+
+Prefer just one skill, or use another agent runtime? Copy the folder into your skills directory:
 
 ```bash
 cp -R skills/webpage-to-markdown ~/.claude/skills/
 ```
 
-To create a new skill, start from the template:
+Use `~/.claude/skills/` for personal skills or `<repo>/.claude/skills/` for project-scoped skills.
+
+### Create a new skill
 
 ```bash
 cp -R template/skill-template skills/my-new-skill
 ```
 
-Then edit `skills/my-new-skill/SKILL.md` and run validation:
+Then edit `skills/my-new-skill/SKILL.md` and run validation (requires PyYAML):
 
 ```bash
+pip install pyyaml
 python3 scripts/validate-skills.py
 ```
 

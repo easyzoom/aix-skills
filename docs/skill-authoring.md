@@ -42,10 +42,24 @@ Use these sections unless the skill is intentionally tiny:
 
 ## Overview
 ## When To Use
+## First Questions
 ## Workflow
+## Common Failures
 ## Verification
-## Common Mistakes
+## Example
 ```
+
+Section conventions used across the existing skills:
+
+- `First Questions` lists the minimum inputs to collect before acting. Most
+  skills include it.
+- Name the workflow section for the task shape: `Integration Checklist` for
+  library integration skills, `Debug Workflow` for debugging skills, or keep
+  `Workflow` otherwise. Routing/entry skills (for example `embedded-debug-entry`)
+  may replace the linear workflow with a routing table that points to other
+  skills.
+- Use `Common Failures` (not "Common Mistakes"); every skill in this repository
+  uses the former.
 
 Prefer direct instructions over essays. A skill is operational guidance, not a blog post.
 
