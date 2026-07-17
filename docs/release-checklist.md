@@ -40,6 +40,37 @@ The number may change as the repository grows.
 - Confirm issue and pull request templates are useful for external contributors.
 - Review `git diff` for accidental generated files or local-only notes.
 
+## Cut A Release
+
+Releases use semantic version tags (`vX.Y.Z`). The plugin version in
+`.claude-plugin/marketplace.json` matches the tag, so plugin users receive an
+update only when a new version ships.
+
+Preview what a release would change without touching git:
+
+```bash
+python3 scripts/release.py 1.1.0 --dry-run
+```
+
+Then cut it. The script validates, syncs the `skills-N` badge to the real count,
+sets the plugin version, prepends a `CHANGELOG.md` section from the commits since
+the last tag, commits, and creates the annotated tag:
+
+```bash
+python3 scripts/release.py 1.1.0
+```
+
+Edit the generated `CHANGELOG.md` section if the auto-drafted notes need
+polishing (amend the release commit), then publish:
+
+```bash
+git push --follow-tags
+```
+
+Pushing the tag triggers `.github/workflows/release.yml`, which re-runs
+validation and creates the GitHub Release using the matching `CHANGELOG.md`
+section as the release notes.
+
 ## Publishing
 
 - Ensure the license is intentional.

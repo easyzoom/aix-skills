@@ -8,6 +8,7 @@
     {
       "name": "aix-skills",
       "source": "./",
+      "version": "1.0.0",
       "description": "All embedded, MCU debugging, firmware, and library-integration Agent Skills maintained in this repository."
     }
   ]
